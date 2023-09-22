@@ -1,0 +1,415 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html {  scroll-behavior: smooth;}
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a { text-decoration: none; color: #000;}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+/* MAIN STYLES */
+.pageSection {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  cursor: default;
+  z-index: -1;
+
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Page Navigation */
+.pageNavBar {
+  width: max-content;
+  position: fixed;
+  z-index: 10;
+  background-color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 40px;
+  right: 32px;
+  bottom: 32px;
+  display: flex;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.pageNavBar li.active {
+  width: 25px;
+  height: 25px;
+  background-color: green;
+  border-radius: 50%;
+
+}
+.pageNavBar li.active a { color: #fff; }
+
+.pageNavBar li { margin-right: 6px; }
+.pageNavBar li:last-child {margin-right: 0;}
+
+.pageNavBar a {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+
+/* .pageNav a: {
+  background-color: green;
+  border-radius: 50%;
+} */
+/* 
+._pageActive, ._pageDefault {
+  background-color: #018C47;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+} */
+ 
+/* Logo */
+.logo {
+
+  background-color: #fff;
+  padding: 12px 18px;
+  border-radius: 45px;
+}
+.body__logo {
+  position: fixed;
+  top: 14px;
+  left: 32px;
+}
+
+.logo img {
+  width: 90px;
+  height: 24px;
+}
+
+.slide {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+
+.scaleImg {animation: scaleOut 6000ms ease-in-out forwards;}
+@keyframes scaleOut {
+  from {transform: scale(1);}
+  to {transform: scale(0.9);}
+} 
+
+
+/* Каталог продукции */
+.sectionGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  column-gap: 20px;
+  row-gap: 40px;
+}
+
+@media only screen and (max-width: 1240px) {
+  .sectionGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .sectionGrid {
+    row-gap: 40px;
+  }
+}
+
+.sectionGrid__item {
+  border: 1px solid #e7e7e7;
+  cursor: pointer;
+  overflow: hidden;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionGrid__item a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sectionGrid__itemImg {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  transition: all .5s;
+  margin-bottom: 36px;
+}
+
+.sectionGrid__itemImg:hover {
+  transform: scale(1.2);
+}
+
+.sectionGrid__itemDesc {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 1.4;
+  transition: 0.25s ease;
+  flex: 0 1 auto;
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: left;
+  flex: 1 1 auto;
+
+}
+
+.sectionGrid__item:hover .sectionGrid__itemDesc {
+  color: #8BC34A;
+}
+
+.sectionGrid__priceTag {
+  font-size: 24px;
+  height: 36px;
+  line-height: 36px;
+  font-weight: 700;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20px;
+
+}
+
+.pageNavBar li i {
+  color: #333;
+  font-size: 14px;
+}
+
+.pageNavBar li.active i {
+  color: #fff;
+}
+
+.footer {
+  width: 100%;
+  background-color: #F7F7F7;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.footerInner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-top: 30px;
+
+}
+
+.footerColTitle {
+  font-size: 14px;
+  line-height: 40px;
+  font-weight: 700;
+  padding: 10px 0;
+  
+}
+
+.footerList {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.footerList__item {
+  display: flex;
+}
+
+.tiensPin {
+  font-size: 14px;
+}
+
+.tiensPin:before {
+  content: '\E613';
+}
+
+.footerListIconWrapper {
+  width: 26px;
+  height: 26px;
+}
+
+.footerList__item {
+  padding: 8px 0;
+}
+
+.footerListLink {
+  font-size: 13px;
+
+}
+
+.footerListIconWrapper {
+  margin-right: 5px;
+}
+
+.footerListLinkWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerLinkHover:hover {
+  color: rgb(76,172,38);
+}
+
+.SocialSection {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.SocialSection__Row {
+  display: flex;
+  margin-bottom: 30px;
+}
+.SocialSection__Row:last-child {
+  margin-bottom: 20px;
+}
+
+.SocialSection__Row .SocialIconWrapper {
+  margin-right: 12px;
+}
+.SocialSection__Row .SocialIconWrapper:last-child {
+  margin-right: 0;
+}
+
+.EmailWrapperTitle {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.EmailInputWrapper {
+  border: 1px solid #cecece;
+  font-size: 12px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.EmailInputWrapper__input {
+  border: none;
+  font-size: 12px;
+  color: #000;
+  outline: none;
+  background-color: transparent;
+}
+
+.EmailInputWrapper__submit {
+  width: 84px;
+  background-color: rgb(108,168,99);
+  font-size: 12px;
+  color: #fff;
+  border: none;
+
+}
+
+.EmailInputWrapper__inputWrapper {
+  padding: 5px;
+}
+
+.sectionSpan {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  padding-top: 30px;
+  font-size: 16px;
+}
+
+.sectionSpan__more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.sectionSpan__more a { display: flex;column-gap: 4px; }
+
+.sectionSpan__more:hover a {
+  color: rgb(76,172,38);
+  
+}
+
+.sectionSpanArrow {
+  font-size: 14px;
+  padding-top: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-menu {
+  background-color: #333;
+  padding: 8px;
+  width: 34px;
+  height: 34px;
+  position: fixed;
+  top: 50%;
+  left: 120px;
+  transform: translateY(-50%);
+  backdrop-filter: blur(10px);
+}
